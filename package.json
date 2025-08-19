@@ -1,6 +1,6 @@
 {
     "name": "mac-accessibility-check",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Check macOS Accessibility (AXIsProcessTrusted) from Node/Electron",
     "main": "index.js",
     "types": "index.d.ts",
