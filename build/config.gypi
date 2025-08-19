@@ -499,6 +499,7 @@
     "init_module": "/Users/xingrong/.npm-init.js",
     "npm_version": "10.9.2",
     "node_gyp": "/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js",
+    "yes": "true",
     "cache": "/Users/xingrong/.npm",
     "user_agent": "npm/10.9.2 node/v22.17.0 darwin arm64 workspaces/false",
     "prefix": "/usr/local"

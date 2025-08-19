@@ -23,7 +23,7 @@ CFLAGS_Debug := \
 	-O0 \
 	-gdwarf-2 \
 	-fno-strict-aliasing \
-	-mmacosx-version-min=10.10 \
+	-mmacosx-version-min=10.15 \
 	-arch \
 	arm64 \
 	-Wall \
@@ -78,7 +78,7 @@ CFLAGS_Release := \
 	-O3 \
 	-gdwarf-2 \
 	-fno-strict-aliasing \
-	-mmacosx-version-min=10.10 \
+	-mmacosx-version-min=10.15 \
 	-arch \
 	arm64 \
 	-Wall \
@@ -149,7 +149,7 @@ $(obj).$(TOOLSET)/$(TARGET)/%.o: $(obj)/%.mm FORCE_DO_CMD
 LDFLAGS_Debug := \
 	-undefined dynamic_lookup \
 	-Wl,-search_paths_first \
-	-mmacosx-version-min=10.10 \
+	-mmacosx-version-min=10.15 \
 	-arch \
 	arm64 \
 	-L$(builddir) \
@@ -162,7 +162,7 @@ LIBTOOLFLAGS_Debug := \
 LDFLAGS_Release := \
 	-undefined dynamic_lookup \
 	-Wl,-search_paths_first \
-	-mmacosx-version-min=10.10 \
+	-mmacosx-version-min=10.15 \
 	-arch \
 	arm64 \
 	-L$(builddir) \
