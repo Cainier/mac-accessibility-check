@@ -1,0 +1,28 @@
+{
+    "name": "mac-accessibility-check",
+    "version": "1.0.0",
+    "description": "Check macOS Accessibility (AXIsProcessTrusted) from Node/Electron",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "gypfile": true,
+    "license": "MIT",
+    "os": [
+        "darwin"
+    ],
+    "cpu": [
+        "arm64",
+        "x64"
+    ],
+    "scripts": {
+        "build": "node-gyp rebuild",
+        "prebuild": "prebuild -u --strip -t 22.0.0"
+    },
+    "dependencies": {
+        "node-addon-api": "^7.1.1"
+    },
+    "devDependencies": {
+        "node-gyp": "^11.2.0",
+        "node-gyp-build": "^4.8.4",
+        "prebuild": "^11.0.0"
+    }
+}
