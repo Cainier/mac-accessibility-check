@@ -1,12 +1,12 @@
 #include <napi.h>
 #import <ApplicationServices/ApplicationServices.h>
 
-// 检查是否已获得权限
+// Check if accessibility permissions are granted
 Napi::Boolean IsTrusted(const Napi::CallbackInfo& info) {
   return Napi::Boolean::New(info.Env(), AXIsProcessTrusted());
 }
 
-// 检查权限，如果没有则弹出系统提示引导授权
+// Check permissions and prompt for authorization if needed
 Napi::Boolean IsTrustedWithPrompt(const Napi::CallbackInfo& info) {
   CFDictionaryRef options = CFDictionaryCreate(
     NULL,
@@ -16,6 +16,12 @@ Napi::Boolean IsTrustedWithPrompt(const Napi::CallbackInfo& info) {
     &kCFTypeDictionaryKeyCallBacks,
     &kCFTypeDictionaryValueCallBacks
   );
+
+  if (!options) {
+    // If dictionary creation fails, fall back to simple check
+    return Napi::Boolean::New(info.Env(), AXIsProcessTrusted());
+  }
+
   bool trusted = AXIsProcessTrustedWithOptions(options);
   CFRelease(options);
   return Napi::Boolean::New(info.Env(), trusted);

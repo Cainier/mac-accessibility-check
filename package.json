@@ -6,6 +6,24 @@
     "types": "index.d.ts",
     "gypfile": true,
     "license": "MIT",
+    "keywords": [
+        "macos",
+        "accessibility",
+        "axistrusted",
+        "electron",
+        "native",
+        "addon"
+    ],
+    "author": {
+        "name": "AI Generated"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/your-username/mac-accessibility-check.git"
+    },
+    "engines": {
+        "node": ">=14.0.0"
+    },
     "os": [
         "darwin"
     ],
@@ -15,7 +33,9 @@
     ],
     "scripts": {
         "build": "node-gyp rebuild",
-        "prebuild": "prebuild -u --strip -t 22.0.0"
+        "prebuild": "prebuild -u --strip -t 14.0.0 -t 16.0.0 -t 18.0.0 -t 20.0.0 -t 22.0.0",
+        "clean": "node-gyp clean",
+        "test": "node test/test.js"
     },
     "dependencies": {
         "node-addon-api": "^7.1.1"

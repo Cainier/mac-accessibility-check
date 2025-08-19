@@ -1,4 +1,9 @@
 const path = require('path');
 const bindings = require('node-gyp-build');
 
-module.exports = bindings(path.join(__dirname));
+const moduleExports = bindings(path.join(__dirname));
+
+// Add default export for TypeScript compatibility
+moduleExports.default = moduleExports;
+
+module.exports = moduleExports;

@@ -13,7 +13,7 @@
       "cflags_cc!": [ "-fno-exceptions" ],
       "xcode_settings": {
         "OTHER_CFLAGS": [ "-fexceptions" ],
-        "MACOSX_DEPLOYMENT_TARGET": "10.10"
+        "MACOSX_DEPLOYMENT_TARGET": "10.15"
       },
       "defines": [ "NAPI_DISABLE_CPP_EXCEPTIONS" ],
       "conditions": [
