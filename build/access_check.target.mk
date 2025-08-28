@@ -25,23 +25,21 @@ CFLAGS_Debug := \
 	-fno-strict-aliasing \
 	-mmacosx-version-min=10.15 \
 	-arch \
-	arm64 \
+	x86_64 \
 	-Wall \
 	-Wendif-labels \
 	-W \
 	-Wno-unused-parameter
 
 # Flags passed to only C files.
-CFLAGS_C_Debug := \
-	-fexceptions
+CFLAGS_C_Debug :=
 
 # Flags passed to only C++ files.
 CFLAGS_CC_Debug := \
 	-std=gnu++17 \
 	-stdlib=libc++ \
 	-fno-rtti \
-	-fno-exceptions \
-	-fexceptions
+	-fno-exceptions
 
 # Flags passed to only ObjC files.
 CFLAGS_OBJC_Debug :=
@@ -80,23 +78,21 @@ CFLAGS_Release := \
 	-fno-strict-aliasing \
 	-mmacosx-version-min=10.15 \
 	-arch \
-	arm64 \
+	x86_64 \
 	-Wall \
 	-Wendif-labels \
 	-W \
 	-Wno-unused-parameter
 
 # Flags passed to only C files.
-CFLAGS_C_Release := \
-	-fexceptions
+CFLAGS_C_Release :=
 
 # Flags passed to only C++ files.
 CFLAGS_CC_Release := \
 	-std=gnu++17 \
 	-stdlib=libc++ \
 	-fno-rtti \
-	-fno-exceptions \
-	-fexceptions
+	-fno-exceptions
 
 # Flags passed to only ObjC files.
 CFLAGS_OBJC_Release :=
@@ -151,7 +147,7 @@ LDFLAGS_Debug := \
 	-Wl,-search_paths_first \
 	-mmacosx-version-min=10.15 \
 	-arch \
-	arm64 \
+	x86_64 \
 	-L$(builddir) \
 	-stdlib=libc++
 
@@ -164,7 +160,7 @@ LDFLAGS_Release := \
 	-Wl,-search_paths_first \
 	-mmacosx-version-min=10.15 \
 	-arch \
-	arm64 \
+	x86_64 \
 	-L$(builddir) \
 	-stdlib=libc++
 
