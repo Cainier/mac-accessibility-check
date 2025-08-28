@@ -36,15 +36,18 @@
     ],
     "scripts": {
         "build": "node-gyp rebuild",
+        "build:clean": "node-gyp clean configure build",
+        "build:universal": "rm -rf build && node-gyp rebuild && lipo -info build/Release/access_check.node",
         "prebuild": "prebuild -u --strip -t 14.0.0 -t 16.0.0 -t 18.0.0 -t 20.0.0 -t 22.0.0",
-        "clean": "node-gyp clean",
         "test": "node test/test.js",
-        "test:mas": "node test/mas-test.js"
+        "test:mas": "node test/mas-test.js",
+        "postinstall": "electron-rebuild -f -w mac-accessibility-check"
     },
     "dependencies": {
         "node-addon-api": "^7.1.1"
     },
     "devDependencies": {
+        "electron-rebuild": "^3.2.9",
         "node-gyp": "^11.2.0",
         "node-gyp-build": "^4.8.4",
         "prebuild": "^11.0.0"
